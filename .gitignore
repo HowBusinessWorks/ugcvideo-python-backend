@@ -16,7 +16,7 @@ ENV/
 .env.example
 
 # BUT DO commit example files to show structure
-!.env.example
+# !.env.example
 
 # IDE
 .vscode/

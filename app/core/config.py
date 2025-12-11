@@ -15,12 +15,10 @@ class Settings(BaseSettings):
     OPENROUTER_API_KEY: str
     OPENROUTER_MODEL: str = "openai/gpt-4o"
 
-    # Stage 1 & 2: Person Generation + Compositing
-    SEEDREAM_API_KEY: str
-
+    # Stage 1 & 2: Person Generation + Compositing (via Fal.ai)
     # Stage 3: Video Generation (Veo3)
-    KIE_API_KEY: str  # Primary provider (cheaper)
-    FAL_KEY: str  # Fallback provider (more reliable)
+    FAL_KEY: str  # Used for: Seedream (Stage 1&2) + Veo3 fallback (Stage 3)
+    KIE_API_KEY: str  # Primary provider for Veo3 (Stage 3, cheaper)
 
     # AWS S3 Storage
     AWS_ACCESS_KEY_ID: str

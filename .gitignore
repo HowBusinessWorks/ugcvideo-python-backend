@@ -9,9 +9,14 @@ env/
 ENV/
 .venv
 
-# Environment
+# Environment files (NEVER commit actual secrets!)
 .env
+.env.local
+.env.production
 .env.example
+
+# BUT DO commit example files to show structure
+!.env.example
 
 # IDE
 .vscode/
@@ -19,6 +24,22 @@ ENV/
 *.swp
 *.swo
 
+# Deployment configs (may contain secrets)
+fly.toml
+railway.json
+railway.toml
+
+# Logs
+*.log
+logs/
+
+# Test files
+test_*.py
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp

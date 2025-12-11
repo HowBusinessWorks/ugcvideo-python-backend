@@ -1,0 +1,78 @@
+
+======================================================================
+🚀 STARTING FULL PIPELINE TEST (WITH GPT-4o)
+======================================================================
+Backend URL: http://localhost:8000
+S3 Bucket: ugc-video-saas-138759786970
+S3 Region: eu-north-1
+======================================================================
+✅ Backend is healthy
+✅ Test product image found: Tinted serum.jpg
+
+📤 Uploading product image to S3...
+✅ Product uploaded: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/302796e6-product.jpg
+
+======================================================================
+🧪 TEST: FULL PIPELINE (Stages 1-2-3 with GPT-4o)
+======================================================================
+Generation ID: 06d30e35-31c7-4cd8-a3d6-3f7695a1c251
+User ID: test-user-b6450c32
+Product URL: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/302796e6-product.jpg
+
+⚠️  Note: This will take ~5-8 minutes and cost ~$2.50-$3.50
+======================================================================
+
+📡 Calling full pipeline endpoint...
+Endpoint: http://localhost:8000/api/v1/generate/ugc-video
+Mode: FAST (2-3 minutes for video generation)
+
+⏳ Starting generation... (this will take several minutes)
+📊 Progress: Stage 1 (Person Generation)...
+
+======================================================================
+✅ FULL PIPELINE TEST SUCCESSFUL!
+======================================================================
+Generation ID: 06d30e35-31c7-4cd8-a3d6-3f7695a1c251
+
+📸 Person Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/person-images/test-user-b64...
+   S3 Key: person-images/test-user-b6450c32/06d30e35-31c7-4cd8-a3d6-3f7695a1c251.png
+
+🎨 Composite Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/composites/test-user-b6450c...
+   S3 Key: composites/test-user-b6450c32/06d30e35-31c7-4cd8-a3d6-3f7695a1c251.png
+
+🎬 Video:
+   URL: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/videos/test-user...
+   S3 Key: videos/test-user-b6450c32/06d30e35-31c7-4cd8-a3d6-3f7695a1c251.mp4
+   Provider: kie
+   Fallback Triggered: False
+
+⏱️  Total Time: 178.0s (3.0 min)
+💰 Estimated Cost:
+   - GPT-4o Enhancement: ~$0.024
+   - Stage 1 (Person): ~$0.10
+   - Stage 2 (Composite): ~$0.15
+   - Stage 3 (Video - FAST): ~$1.50
+   - Total: ~$1.77
+
+🎉 GPT-4o Enhancement was applied to all 3 stages!
+======================================================================
+
+
+======================================================================
+🎉 TEST COMPLETED SUCCESSFULLY!
+======================================================================
+✅ Stage 1 - Person generated with GPT-4o enhanced prompt
+✅ Stage 2 - Composite created with GPT-4o enhanced prompt
+✅ Stage 3 - Video generated with GPT-4o enhanced prompt
+
+💡 Check the backend logs to see GPT-4o enhancement in action:
+   - Product image analysis
+   - Person prompt enhancement (UGC-style keywords)
+   - Composite prompt enhancement (lighting & integration)
+   - Video prompt enhancement (amateur motion & camera)
+
+📁 All files are stored in S3 bucket: ugc-video-saas-138759786970
+======================================================================
+

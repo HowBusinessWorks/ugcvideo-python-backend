@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/Users/eric/Documents/work/ugcvideo-main/python-backend/test_stages_1_2.py", line 278, in main
+    result1 = await test_stages_1_2_easy_mode(product_url)
+  File "/Users/eric/Documents/work/ugcvideo-main/python-backend/test_stages_1_2.py", line 114, in test_stages_1_2_easy_mode
+    response.raise_for_status()
+  File "/Users/eric/Library/Python/3.9/lib/python/site-packages/httpx/_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://localhost:8000/api/v1/generate/ugc-video-test-stages12'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+======================================================================
+🚀 STARTING STAGES 1-2 TEST
+======================================================================
+Backend URL: http://localhost:8000
+S3 Bucket: ugc-video-saas-138759786970
+S3 Region: eu-north-1
+======================================================================
+✅ Backend is healthy
+✅ Test product image found: Tinted serum.jpg
+
+📤 Uploading product image to S3...
+✅ Product uploaded: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/8a823c5e-product.jpg
+
+======================================================================
+Running 2 tests: Easy Mode + Advanced Mode
+======================================================================
+
+
+🧪 TEST 1/2: Easy Mode (dropdown fields)
+
+======================================================================
+🧪 TEST: STAGES 1-2 ONLY (Easy Mode)
+======================================================================
+Generation ID: 9a39c477-35ee-44d5-9e4b-96bab823c4fe
+User ID: test-user-322eed0b
+Product URL: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/8a823c5e-product.jpg
+======================================================================
+
+📡 Calling test endpoint...
+Endpoint: http://localhost:8000/api/v1/generate/ugc-video-test-stages12
+
+❌ HTTP Error: 500
+Response: {"detail":"Failed to generate person+composite: Fal.ai job 77ff94fd-0c71-43f2-9d94-514500f3dc4b timed out after 120s"}
+
+❌ Tests failed: Server error '500 Internal Server Error' for url 'http://localhost:8000/api/v1/generate/ugc-video-test-stages12'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500

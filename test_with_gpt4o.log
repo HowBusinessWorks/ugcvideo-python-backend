@@ -1,0 +1,103 @@
+
+======================================================================
+🚀 STARTING STAGES 1-2 TEST
+======================================================================
+Backend URL: http://localhost:8000
+S3 Bucket: ugc-video-saas-138759786970
+S3 Region: eu-north-1
+======================================================================
+✅ Backend is healthy
+✅ Test product image found: Tinted serum.jpg
+
+📤 Uploading product image to S3...
+✅ Product uploaded: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/70b41bc4-product.jpg
+
+======================================================================
+Running 2 tests: Easy Mode + Advanced Mode
+======================================================================
+
+
+🧪 TEST 1/2: Easy Mode (dropdown fields)
+
+======================================================================
+🧪 TEST: STAGES 1-2 ONLY (Easy Mode)
+======================================================================
+Generation ID: dd17715a-77eb-4ce0-bd38-c6c5a12ad105
+User ID: test-user-46c8d153
+Product URL: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/70b41bc4-product.jpg
+======================================================================
+
+📡 Calling test endpoint...
+Endpoint: http://localhost:8000/api/v1/generate/ugc-video-test-stages12
+
+======================================================================
+✅ TEST SUCCESSFUL!
+======================================================================
+Generation ID: dd17715a-77eb-4ce0-bd38-c6c5a12ad105
+
+📸 Person Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/person-images/test-user-46c8d153/dd17715a-77eb-4ce0-bd38-c6c5a12ad105.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIASATV2KHNECLYCLUR%2F20251121%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Date=20251121T120627Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d3347ce7d18b80c60e70c9f6cb3c133c6d6edc9d571e61cad93cb27b0d5dcb91
+   S3 Key: person-images/test-user-46c8d153/dd17715a-77eb-4ce0-bd38-c6c5a12ad105.png
+
+🎨 Composite Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/composites/test-user-46c8d153/dd17715a-77eb-4ce0-bd38-c6c5a12ad105.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIASATV2KHNECLYCLUR%2F20251121%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Date=20251121T120714Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ffb845880beaddc1d793c41182beb36c425df9f67493d46b7d63254aa5ec5c7a
+   S3 Key: composites/test-user-46c8d153/dd17715a-77eb-4ce0-bd38-c6c5a12ad105.png
+
+⏱️  Total Time: 72.4s (1.2 min)
+💰 Estimated Cost: ~$0.25
+
+Note: TEST MODE: Stage 3 (video) was skipped
+======================================================================
+
+
+⏳ Waiting 5 seconds before next test...
+
+
+🧪 TEST 2/2: Advanced Mode (custom prompt)
+
+======================================================================
+🧪 TEST: STAGES 1-2 ONLY (Advanced Mode)
+======================================================================
+Generation ID: 2c73a6f8-0e2b-454d-b9a6-1270a05372f4
+User ID: test-user-eab2297f
+Product URL: https://ugc-video-saas-138759786970.s3.eu-north-1.amazonaws.com/products/test-user/70b41bc4-product.jpg
+======================================================================
+
+📡 Calling test endpoint...
+Endpoint: http://localhost:8000/api/v1/generate/ugc-video-test-stages12
+
+======================================================================
+✅ TEST SUCCESSFUL!
+======================================================================
+Generation ID: 2c73a6f8-0e2b-454d-b9a6-1270a05372f4
+
+📸 Person Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/person-images/test-user-eab2297f/2c73a6f8-0e2b-454d-b9a6-1270a05372f4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIASATV2KHNECLYCLUR%2F20251121%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Date=20251121T120741Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ae8f685f178ed6331e1d6be33c5cbf805a229f20514298ef92a61ce350df64d
+   S3 Key: person-images/test-user-eab2297f/2c73a6f8-0e2b-454d-b9a6-1270a05372f4.png
+
+🎨 Composite Image:
+   URL: https://ugc-video-saas-138759786970.s3.amazonaws.com/composites/test-user-eab2297f/2c73a6f8-0e2b-454d-b9a6-1270a05372f4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIASATV2KHNECLYCLUR%2F20251121%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Date=20251121T120829Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=19004c95e923e88b20068e0af0c64a65d600d9ad638aa61d0287a3d0ef90e6e6
+   S3 Key: composites/test-user-eab2297f/2c73a6f8-0e2b-454d-b9a6-1270a05372f4.png
+
+⏱️  Total Time: 70.0s (1.2 min)
+💰 Estimated Cost: ~$0.25
+
+Note: TEST MODE: Stage 3 (video) was skipped
+======================================================================
+
+
+======================================================================
+🎉 ALL TESTS COMPLETED SUCCESSFULLY!
+======================================================================
+✅ Easy Mode Test - Person & Composite generated
+✅ Advanced Mode Test - Person & Composite generated
+
+💰 Total Estimated Cost: ~$0.50 (2 tests)
+⏱️  Stage 3 (video) was skipped to save costs
+
+Next Steps:
+1. Check the S3 bucket for generated images
+2. Review the quality of person generation and compositing
+3. If satisfied, run full pipeline test with Stage 3
+======================================================================
+

@@ -16,7 +16,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://ugcvideo-app-client-production.up.railway.app",  # Production frontend
+        "https://ugcvideo-app.netlify.app",  # Netlify production frontend
+        "https://ugcvideo-app-client-production.up.railway.app",  # Railway frontend (backup)
         "https://ugcvideo-app-server-production.up.railway.app",  # Production backend
         "http://localhost:3000",  # Local development
         "http://localhost:3001",  # Local development

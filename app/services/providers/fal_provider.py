@@ -57,7 +57,7 @@ class FalProvider(BaseProvider):
 
     async def submit_image_to_video_job(self, request: Any) -> Dict[str, Any]:
         """
-        Submit image-to-video generation job to Fal.ai (Minimax Hailuo)
+        Submit image-to-video generation job to Fal.ai (Veo3)
 
         Args:
             request: GenerateImageToVideoRequest object
@@ -68,16 +68,21 @@ class FalProvider(BaseProvider):
         # Format the full prompt (combine system + user prompt)
         full_prompt = self.format_prompt(request.prompt, request.system_prompt)
 
-        # Prepare arguments for Minimax Hailuo
+        # Check if fast mode is requested
+        use_fast = request.parameters.get("use_fast", False)
+
+        # Prepare arguments for Veo3
         fal_arguments = {
             "prompt": full_prompt,
             "image_url": request.image_url,
-            "prompt_optimizer": request.parameters.get("prompt_optimizer", True)
         }
+
+        # Choose Veo3 endpoint based on speed mode
+        model_endpoint = "fal-ai/veo3.1/fast/image-to-video" if use_fast else "fal-ai/veo3.1/image-to-video"
 
         # Submit job to Fal.ai with webhook
         result = await self.client.submit(
-            "fal-ai/minimax/hailuo-02-fast/image-to-video",  # Minimax Hailuo model
+            model_endpoint,  # Veo3 fast or standard
             arguments=fal_arguments,
             webhook_url=request.webhook_url
         )
@@ -85,7 +90,7 @@ class FalProvider(BaseProvider):
         # Return standardized response
         return {
             "job_id": result.request_id,
-            "estimated_time": 60  # Minimax I2V is faster than T2V (typically 40-80 seconds)
+            "estimated_time": 120 if use_fast else 240  # Veo3 fast: 2 min, standard: 4 min
         }
 
     async def submit_image_job(self, request: Any) -> Dict[str, Any]:

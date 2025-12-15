@@ -85,7 +85,8 @@ class Veo3Provider(BaseProvider):
                 prompt=prompt,
                 duration=duration,
                 aspect_ratio=aspect_ratio,
-                webhook_url=webhook_url
+                webhook_url=webhook_url,
+                use_fast=use_fast
             )
 
             return {
@@ -137,7 +138,8 @@ class Veo3Provider(BaseProvider):
                 prompt=prompt,
                 duration=duration,
                 aspect_ratio=aspect_ratio,
-                webhook_url=webhook_url
+                webhook_url=webhook_url,
+                use_fast=use_fast
             )
 
             logger.info(f"✅ [Veo3] Fal.ai succeeded: {result['job_id']}")
@@ -207,9 +209,10 @@ class Veo3Provider(BaseProvider):
         prompt: str,
         duration: int,
         aspect_ratio: str,
-        webhook_url: Optional[str]
+        webhook_url: Optional[str],
+        use_fast: bool = False
     ) -> Dict[str, Any]:
-        """Submit video generation job to Fal.ai"""
+        """Submit video generation job to Fal.ai using Veo3"""
 
         # Build Fal.ai request
         class FalRequest:
@@ -219,7 +222,8 @@ class Veo3Provider(BaseProvider):
                 self.system_prompt = ""
                 self.parameters = {
                     "duration": duration,
-                    "aspect_ratio": aspect_ratio
+                    "aspect_ratio": aspect_ratio,
+                    "use_fast": use_fast
                 }
                 self.webhook_url = webhook_url
 
@@ -230,7 +234,7 @@ class Veo3Provider(BaseProvider):
         return {
             "job_id": result["job_id"],
             "provider": "fal",
-            "estimated_time": 300
+            "estimated_time": result.get("estimated_time", 120 if use_fast else 240)
         }
 
     async def get_status(self, job_id: str, provider: str) -> Dict[str, Any]:
@@ -256,7 +260,7 @@ class Veo3Provider(BaseProvider):
         elif provider == "fal":
             return await self.fal_provider.get_status(
                 job_id,
-                model="fal-ai/minimax/hailuo-02-fast/image-to-video"
+                model="fal-ai/veo3.1/image-to-video"  # Veo3 endpoint
             )
         else:
             raise ValueError(f"Unknown provider: {provider}")

@@ -71,10 +71,16 @@ class FalProvider(BaseProvider):
         # Check if fast mode is requested
         use_fast = request.parameters.get("use_fast", False)
 
+        # Get aspect ratio and duration from parameters
+        aspect_ratio = request.parameters.get("aspect_ratio", "9:16")
+        duration = request.parameters.get("duration", 8)
+
         # Prepare arguments for Veo3
         fal_arguments = {
             "prompt": full_prompt,
             "image_url": request.image_url,
+            "aspect_ratio": aspect_ratio,
+            "duration": duration,
         }
 
         # Choose Veo3 endpoint based on speed mode
